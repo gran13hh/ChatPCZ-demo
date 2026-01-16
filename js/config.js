@@ -34,8 +34,8 @@ const CONFIG = {
         {
             type: "stat",
             icon: "📚",
-            label: "这一年，我们一共阅读了",
-            value: "10,000,000",
+            label: "这一年，我们一共阅读了大约",
+            value: "23,000,000",
             unit: "万词文献",
             comment: "相当于《红楼梦》的100倍！"
         },
@@ -44,8 +44,8 @@ const CONFIG = {
         {
             type: "stat",
             icon: "☕",
-            label: "为了科研，我们喝掉了",
-            value: "2,048",
+            label: "为了科研，我们喝掉了大约",
+            value: "1,024",
             unit: "杯咖啡",
             comment: "咖啡因是第一生产力"
         },
@@ -54,7 +54,7 @@ const CONFIG = {
         {
             type: "stat",
             icon: "💻",
-            label: "我们敲下了",
+            label: "我们敲下了大约",
             value: "128,512",
             unit: "行代码",
             comment: "每一个bug都是成长的足迹"
@@ -65,49 +65,58 @@ const CONFIG = {
             type: "stat",
             icon: "🌙",
             label: "实验室的灯光陪伴了我们",
-            value: "365",
+            value: "310",
             unit: "个夜晚",
             comment: "头发还在，梦想也在"
-        },
-
-        // 照片展示1
-        {
-            type: "photo",
-            src: "images/1.jpg",
-            caption: "探索科学的海洋，就像水母一样优雅地漂浮"
         },
 
         // 文字卡片
         {
             type: "text",
-            content: "这一年，我们不仅收获了<span class='text-highlight'>知识</span>，更收获了<span class='text-highlight'>友谊</span>"
+            content: "这一年，我们不仅收获了<span class='text-highlight'>知识</span>，更收获了<span class='text-highlight'>很多人文自然</span>"
         },
+
+        // 照片展示1
+        {
+            type: "photo",
+            src: "images/沙河.jpg",
+            caption: "密云项目经常在地图上看到的北京密云区沙河早市"
+        },
+        {
+            type: "photo",
+            src: "images/密云供电局.jpg",
+            caption: "密云项目的甲方"
+        },
+
 
         // 照片展示2
         {
             type: "photo",
-            src: "images/2.jpg",
-            caption: "在知识的海洋里畅游"
+            src: "images/2cd08a365de5a4979b17adb9a16918b1.jpg",
+            caption: "武汉略影"
         },
 
-        // 统计数据 - 论文
         {
-            type: "stat",
-            icon: "📝",
-            label: "我们一起发表了",
-            value: "12",
-            unit: "篇论文",
-            comment: "从投稿到接收，每一篇都是奇迹"
+            type: "photo",
+            src: "images/af17e0a1557ef0b4aa34de8b961ce738.jpg",
+            caption: "武汉略影"
         },
 
-        // 统计数据 - 聚餐
         {
-            type: "stat",
-            icon: "🍜",
-            label: "团建聚餐",
-            value: "24",
-            unit: "次",
-            comment: "科研需要补充能量！"
+            type: "photo",
+            src: "images/2cd08a365de5a4979b17adb9a16918b1.jpg",
+            caption: "武汉略影"
+        },
+        
+        {
+            type: "photo",
+            src: "images/b8e62001d3438a5fa0b1f2e34cf474e4.jpg",
+            caption: "金坛略影"
+        },
+        {
+            type: "photo",
+            src: "images/2d88168e4f100ddcd300ba9486ef7086.jpg",
+            caption: "满眼绿色"
         },
 
         // 结尾页
