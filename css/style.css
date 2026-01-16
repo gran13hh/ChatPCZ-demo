@@ -1,31 +1,37 @@
 /* ========================================
-   Gemini暗夜模式 - 精确复刻
+   Gemini风格 - 优雅渐变主题
    ======================================== */
 :root {
-    /* Gemini暗夜模式精确配色 */
-    --bg-main: #131314;
-    --bg-sidebar: #1e1f20;
-    --bg-elevated: #282a2c;
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --bg-card-hover: rgba(255, 255, 255, 0.1);
+    /* 深邃渐变背景色 */
+    --bg-main: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #24243e 100%);
+    --bg-main-solid: #0f0c29;
+    --bg-sidebar: rgba(255, 255, 255, 0.05);
+    --bg-elevated: rgba(255, 255, 255, 0.08);
+    --bg-card: rgba(255, 255, 255, 0.06);
+    --bg-card-hover: rgba(255, 255, 255, 0.12);
 
-    /* 文字颜色 */
-    --text-primary: #e3e3e3;
-    --text-secondary: #8e918f;
-    --text-muted: #5f6368;
+    /* 丰富的文字颜色 */
+    --text-primary: #ffffff;
+    --text-secondary: #a8b2d1;
+    --text-muted: #7a8599;
+    --text-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 
-    /* 边框 */
-    --border-color: #3c4043;
-    --border-hover: #5f6368;
+    /* 边框 - 带微光效果 */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    --border-glow: rgba(102, 126, 234, 0.3);
 
-    /* 强调色 */
-    --accent-blue: #8ab4f8;
+    /* 强调色 - 渐变调色板 */
+    --accent-blue: #667eea;
+    --accent-purple: #764ba2;
+    --accent-pink: #f093fb;
+    --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 
     /* 字体 */
     --font-family: 'Google Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* 过渡 */
-    --transition: 0.2s ease;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -43,7 +49,9 @@ body {
 body {
     font-family: var(--font-family);
     background: var(--bg-main);
+    background-attachment: fixed;
     color: var(--text-primary);
+    min-height: 100vh;
 }
 
 /* ========================================
@@ -103,8 +111,11 @@ body {
 
 .logo-text {
     font-size: 20px;
-    font-weight: 400;
-    color: var(--text-primary);
+    font-weight: 500;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: -0.5px;
 }
 
@@ -169,13 +180,18 @@ body {
     align-items: center;
     gap: 16px;
     font-size: 32px;
-    font-weight: 400;
-    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .title-text {
     white-space: nowrap;
+    background: linear-gradient(135deg, #fff 0%, #a8b2d1 50%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
+
 
 /* 老师头像 */
 .profile-wrapper {
@@ -224,20 +240,23 @@ body {
 .input-box {
     display: flex;
     align-items: center;
-    background: var(--bg-sidebar);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 28px;
     padding: 4px 8px 4px 24px;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 .input-box:hover {
     border-color: var(--border-hover);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.15);
 }
 
 .input-box:focus-within {
     border-color: var(--accent-blue);
-    background: var(--bg-elevated);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.25);
 }
 
 .prompt-input {
@@ -262,18 +281,20 @@ body {
     height: 44px;
     border-radius: 50%;
     border: none;
-    background: transparent;
-    color: var(--text-secondary);
+    background: var(--accent-gradient);
+    color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    opacity: 0.8;
 }
 
 .submit-btn:hover {
-    background: var(--bg-card-hover);
-    color: var(--text-primary);
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* ========================================
@@ -287,7 +308,7 @@ body {
 }
 
 .suggestion-card {
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 16px 20px;
@@ -296,11 +317,14 @@ body {
     gap: 12px;
     cursor: pointer;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 .suggestion-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
 }
 
 .card-icon {
@@ -310,6 +334,11 @@ body {
 .suggestion-card span {
     font-size: 14px;
     color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.suggestion-card:hover span {
+    color: var(--text-primary);
 }
 
 /* ========================================
